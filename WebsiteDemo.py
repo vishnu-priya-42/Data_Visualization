@@ -19,7 +19,7 @@ local_css("FontStyle.css")
 
 
 
-#lottie_coding1 = load_lottieurl("https://assets6.lottiefiles.com/packages/lf20_v4isjbj5.json")
+lottie_coding1 = load_lottieurl("https://assets6.lottiefiles.com/packages/lf20_v4isjbj5.json")
 #lottie_coding2 = load_lottieurl("https://lottiefiles.com/71619-coding")
 #img1 = Image.open("Images/Graphs.png")
 #img2 = Image.open("Image/screenshot(33).png")
