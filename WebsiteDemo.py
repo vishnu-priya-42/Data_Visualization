@@ -31,7 +31,7 @@ with st.container():
     st.title("A Data analyst from MVSR Engineering College")
     #file = open("DataAnalysiss.txt","r")
     #print(st.write(file.read()))
-st.write("[Learn More >](http://localhost:8501)")
+st.write("[Learn More >](https://share.streamlit.io/vishnu-priya-42/abcd/main/data_analysis_1.py)")
 
 
 
