@@ -56,7 +56,7 @@ with st.container() :
     with image_column:
         #Inserting an image (Bug is done)
         st.write("We can insert our images here")
-        st.image(img1)
+        #st.image(img1)
         #st.image(img2)
     with text_column:
         st.subheader("Intergrate lottie Animations inside")
