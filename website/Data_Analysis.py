@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-from sklearn import metrics
 import streamlit as st
 
 st.set_page_config(page_title="Data Visualization",page_icon=":chart_with_downwards_trend:",layout="wide")
@@ -44,15 +43,7 @@ with st.container():
     st.write(df)
     st.write("")
 
-    @st.cache
-    def convert_df(df):
-        return df.to_csv().encode('utf-8')
-    csv = convert_df(df)
-    st.download_button(
-        label="Download data as .csv",
-        data=csv,
-        file_name='cars_engage_2022.csv',
-        mime='text/csv')
+st.markdown("""<style>.font {font-size:25px !important;}</style>""", unsafe_allow_html=True)
 
 #plotting graph for most poplar specification combination
 fig1,axes=plt.subplots(2,2,figsize=(10,7))
@@ -93,13 +84,12 @@ with st.container():
     fig1
     st.write("")
     st.header('Conclusion')
-    st.write('*From the above graphs, we can conclude that most of the customers prefer car with **Incline** Cylindrical Configuration, **Petrol** Fuel type , **5** gears and **5** seats*')
+    st.markdown('<p class="font">From the above graphs, we can conclude that most of the customers prefer car with <b>Incline</b> Cylindrical Configuration, <b>Petrol</b> Fuel type , 5 gears and 5 seats</p>', unsafe_allow_html=True)
 
 #Subplots of piecharts
 #plot Type vs count
 type_list=df["Type"].tolist()
 type_dict=dict((type_count, type_list.count(type_count)) for type_count in set(type_list))
-print(type_dict)
 
 dict_keys=list(type_dict.keys())
 dict_values=list(type_dict.values())
@@ -110,13 +100,12 @@ plt.tight_layout(pad=4)
 sns.set_style('darkgrid')
 color=sns.color_palette("Paired")
 axes[0].set_title("Most Popular Type of Car",fontsize=30)
-axes[0].pie(dict_values,colors=color, startangle=60, autopct='%1.1f%%')
+axes[0].pie(dict_values,colors=color, startangle=60)
 axes[0].legend(dict_keys)
 
 #plot Body_Type vs count
 b_type_list=df["Body_Type"].tolist()
 b_type_dict=dict((b_type_count,b_type_list.count(b_type_count)) for b_type_count in set(b_type_list))
-print(b_type_dict)
 
 b_dict_keys=list(b_type_dict.keys())
 b_dict_values=list(b_type_dict.values())
@@ -124,7 +113,7 @@ b_dict_values=list(b_type_dict.values())
 sns.set_style('darkgrid')
 color=sns.color_palette("Paired")
 axes[1].set_title("Most Popular Body Type",fontsize=30)
-axes[1].pie(b_dict_values,colors=color, startangle=30, autopct='%1.1f%%')
+axes[1].pie(b_dict_values,colors=color, startangle=30)
 axes[1].legend(b_dict_keys)
 
 with st.container():
@@ -134,13 +123,13 @@ with st.container():
     fig2
     st.write("")
     st.header('Conclusion')
-    st.write('*From the above pie charts, we can conclude that most of the customers prefer a **Manual** car and **SUV** body type*')
+    st.markdown('<p class="font">From the above pie charts, we can conclude that most of the customers prefer a <b>Manual</b> car and <b>SUV</b> body type</p>', unsafe_allow_html=True)
 
-#plotting graph Mileage vs Power
+#plotting graph Fuel Tank Capacity vs Power
 fig3=plt.figure(figsize=(10,7))
 sns.regplot(x="Fuel_Tank_Capacity", y="Power", data=df)
-plt.title("Fuel_Tank_Capacity vs Power",fontsize=25)
-plt.xlabel("Fuel_Tank_Capacity",fontsize=16)
+plt.title("Fuel Tank Capacity vs Power",fontsize=22)
+plt.xlabel("Fuel Tank Capacity",fontsize=16)
 plt.ylabel("Power",fontsize=16)
 plt.xticks(fontsize=13)
 plt.yticks(fontsize=13)
@@ -152,7 +141,7 @@ with st.container():
     fig3
     st.write("")
     st.header('Conclusion')
-    st.write('*Hence from above graph, we can conclude that **more power generally means higher fuel consumption***')
+    st.markdown('<p class="font">Hence from above graph, we can conclude that <b>more power generally means higher fuel consumption</b></p>', unsafe_allow_html=True)
 
 #model development
 #Simple Regression Model
@@ -185,7 +174,7 @@ with st.container():
     fig4
     st.write("")
     st.header('Conclusion')
-    st.write('*Hence from above observation, we can conclude that ____*')
+    st.markdown('<p class="font">From above observation, we can conclude that Actual values and Predicted values are almost same and hence our Model is </p>', unsafe_allow_html=True)
 
 #Multiple Regression Model
 
@@ -224,5 +213,4 @@ with st.container():
     fig5
     st.write("")
     st.header('Conclusion')
-    st.write('*Hence from above observation, we can conclude that ____*')
-
+    st.markdown('<p class="font">From above observation, we can conclude that Actual values and Predicted values are almost same and hence our Model is </p>', unsafe_allow_html=True)
