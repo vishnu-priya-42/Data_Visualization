@@ -14,43 +14,44 @@ def Graphical_Content(url) :
     return r.json()
 
 lottie_coding1 = Graphical_Content("https://assets6.lottiefiles.com/packages/lf20_0yfsb3a1.json")
+lottie_coding2 = Graphical_Content("https://iconscout.com/lottie/programming-language-4517710.json")
 
 #displaying website main motive
 with st.container():
     left_column, right_column=st.columns((1,2))
+    with left_column:
+        st_lottie(lottie_coding1,height=300,key="coding")
     with right_column :
         st.title("Data Analysis Report")
         st.subheader("Data Analysis on Automotive Industry")
         st.write("")
         st.markdown("""
-        <style>
-        .font {
-        font-size:20px !important;
-        }
-        </style>
-        """, unsafe_allow_html=True)
+        <style>.font {font-size:20px !important;}</style>""", unsafe_allow_html=True)
         st.markdown('<p class="font">This Website summarises the challenge of data analysis on a sample dataset of Automotive Industry</p>', unsafe_allow_html=True)
-    with left_column:
-        st_lottie(lottie_coding1,height=300,key="coding")
-
 
 #displaying summary of website
 with st.container():
     st.write("---")
-    st.header("About Project")
-    """
-    - The data analysis was done on a dataset cars_engage_2022.csv
+    left_column, right_column=st.columns((1,2))
+    with left_column:
+        st.header("About Project")
+        """
+        - The data analysis was done on a dataset cars_engage_2022.csv
     
-    - Using the dataset, data was analysed to find out most popular car specification, most popular car type and the power of car based on fuel capapcity
+        - Using the dataset, data was analysed to find out most popular car specification,
+            most popular car type and the power of car based on fuel capapcity
+      
+        - Models were developed to predict the future sales
+        """
+        st.write("1. Simple Linear Regression Model")
+        st.write("2. Multiple Linear Regression Model")
     
-    - Models were developed to predict the future sales
-    """
-    st.write("1. Simple Linear Regression Model")
-    st.write("2. Multiple Linear Regression Model")
-    """- Click on below link to view visualized data"""
-    st.write("[Data Visualization](https://share.streamlit.io/vishnu-priya-42/abcd/main/website/Data_Visualization.py)")
+        """- Click on below link to view visualized data"""
+        st.write("[Data Visualization](http://localhost:8502/)")
+    with right_column :
+        st_lottie(lottie_coding2,height=300)
 
-# Contact Info
+# ---- Contact form Info
 with st.container() :
     st.write("---")
     st.header("My details")
