@@ -40,7 +40,9 @@ with st.container():
     st.header("About Project")
     """
     - The data analysis was done on a dataset cars_engage_2022.csv
+    
     - Using the dataset, data was analysed to find out most popular car specification, most popular car type and the power of car based on fuel capapcity
+    
     - Models were developed to predict the future sales
     """
     st.write("1. Simple Linear Regression Model")
