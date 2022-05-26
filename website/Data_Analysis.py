@@ -38,20 +38,18 @@ with st.container():
 with st.container():
     st.write("---")
     st.header("About Project")
-    """
-
-    - The data analysis was done on a dataset cars_engage_2022.csv
+   """
+        - The data analysis was done on a dataset cars_engage_2022.csv
     
-    - Using the dataset, data was analysed to find out most popular car specification,
-        most popular car type and the power of car based on fuel capapcity
+        - Using the dataset, data was analysed to find out most popular car specification,
+            most popular car type and the power of car based on fuel capapcity
       
-    - Models were developed to predict the future sales
-            1. Simple Linear Regression Model
-            2. Multiple Linear Regression Model
+        - Models were developed to predict the future sales
+        """
+        st.write("1. Simple Linear Regression Model")
+        st.write("2. Multiple Linear Regression Model")
     
-    - Click on below link to view visualized data
-    
-    """
+        """- Click on below link to view visualized data"""
 
 st.write("[Data Visualization](https://share.streamlit.io/vishnu-priya-42/abcd/main/website/Data_Visualization.py)")
 
