@@ -47,7 +47,7 @@ with st.container():
     
     """
 
-st.write("[Data Visualization](http://localhost:8502/)")
+st.write("[Data Visualization](https://share.streamlit.io/vishnu-priya-42/abcd/main/Data_Analysis.py)")
 
 # ---- Contact form Info
 with st.container() :
