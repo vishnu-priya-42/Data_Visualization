@@ -181,7 +181,6 @@ with st.container():
 x=df[["Power","Fuel_Tank_Capacity"]].values.reshape(-1,2)
 y=df["Ex-Showroom_Price"]
 
-#print(x.head())
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.3, random_state = 100)
 
 mlr = LinearRegression()  
@@ -196,15 +195,11 @@ Z=y_test
 fig5=plt.figure()
 ax=fig5.add_subplot(111,projection='3d')
 
-#xs=np.tile(np.arange(5000),(5000,1))
-#ys=np.tile(np.arange(5000),(5000,1))
-#z=X*mlr.coef_[0]+Y*mlr.coef_[1]+mlr.intercept_
-#y2=np.reshape(y_pred_mlr,(-1,2))
-
 ax.scatter(X,Y,Z)
 ax.scatter(X,Y,y_pred_mlr,c='r')
-#ax.plot_surface(X,Y,y2)
-plt.show()
+ax.set_xlabel("Power")
+ax.set_ylabel("Fuel Tank Capacity")
+ax.set_zlabel("Ex-Showroom Price")
 
 with st.container():
     st.write("---")
