@@ -94,7 +94,7 @@ type_dict=dict((type_count, type_list.count(type_count)) for type_count in set(t
 dict_keys=list(type_dict.keys())
 dict_values=list(type_dict.values())
 
-fig2,axes=plt.subplots(1,2,figsize=(10,7))
+fig2,axes=plt.subplots(1,2,figsize=(15,11))
 plt.tight_layout(pad=4)
 
 sns.set_style('darkgrid')
@@ -160,7 +160,7 @@ y_test=y_test.ravel()
 y_pred_slr=y_pred_slr.ravel()
 
 #plot actual and predicted values
-fig4,ax=plt.subplots(figsize=(10,7))
+fig4,ax=plt.subplots(figsize=(10,6))
 ax.scatter(x_test,y_test)
 ax.plot(x_test, y_pred_slr, 'red')
 ax.set_xlabel("Power")
@@ -192,7 +192,7 @@ Y=x_test[:,1]
 Z=y_test
 
 #plot actual and predicted values
-fig5=plt.figure(figsize=(10,7))
+fig5=plt.figure(figsize=(10,6))
 ax=fig5.add_subplot(111,projection='3d')
 ax.scatter(X,Y,Z)
 ax.scatter(X,Y,y_pred_mlr,c='r')
