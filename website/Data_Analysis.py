@@ -14,7 +14,7 @@ def Graphical_Content(url) :
     return r.json()
 
 lottie_coding1 = Graphical_Content("https://assets6.lottiefiles.com/packages/lf20_0yfsb3a1.json")
-lottie_coding2 = Graphical_Content("https://iconscout.com/lottie/programming-language-4517710.json")
+lottie_coding2 = Graphical_Content("https://assets6.lottiefiles.com/packages/lf20_v4isjbj5.json")
 
 #displaying website main motive
 with st.container():
@@ -27,7 +27,7 @@ with st.container():
         st.write("")
         st.markdown("""
         <style>.font {font-size:20px !important;}</style>""", unsafe_allow_html=True)
-        st.markdown('<p class="font">This Website summarises the challenge of data analysis on a sample dataset of Automotive Industry</p>', unsafe_allow_html=True)
+        st.markdown('<p class="font">This Website summarises the Challenge of Data Analysis on a sample dataset of Automotive Industry</p>', unsafe_allow_html=True)
 
 #displaying summary of website
 with st.container():
@@ -36,27 +36,31 @@ with st.container():
     with left_column:
         st.header("About Project")
         """
-        - The data analysis was done on a dataset cars_engage_2022.csv
+        - **The Data Analysis was done on a dataset "cars_engage_2022.csv**"
+
+        - **The dataset "cars_engage_2022.csv" can be downloaded from my Github Profile
+            (availabe below)**
     
-        - Using the dataset, data was analysed to find out most popular car specification,
-            most popular car type and the power of car based on fuel capapcity
+        - **Using the dataset, data was analysed to find out the most popular Car Specification,
+            most popular Car Type and the Power of car based on Fuel Capacity**
       
-        - Models were developed to predict the future sales
+        - **Models were developed to predict the Future Sales**
         """
-        st.write("1. Simple Linear Regression Model")
-        st.write("2. Multiple Linear Regression Model")
+        st.write("**1. Simple Linear Regression Model**")
+        st.write("**2. Multiple Linear Regression Model**")
     
-        """- Click on below link to view visualized data"""
-        st.write("[Data Visualization](https://share.streamlit.io/vishnu-priya-42/abcd/main/website/Data_Visualization.py)")
+        """- **Click on below link to view Visualized Data**"""
+        st.write("[Data Visualization](http://localhost:8502/)")
     with right_column :
         st_lottie(lottie_coding2,height=300)
 
-# ---- Contact form Info
+#Contact form Info
 with st.container() :
     st.write("---")
-    st.header("My details")
+    st.header("My Profile")
     st.markdown('<p class="font">Name: Vishnu Priya</p>', unsafe_allow_html=True)
     st.markdown('<p class="font">Branch: Computer Science and Engineering</p>', unsafe_allow_html=True)
     st.markdown('<p class="font">College: Maturi Venkata Subba Rao Enginneering College</p>', unsafe_allow_html=True)
+    st.markdown('<p class="font">LinkedIn profile: www.linkedin.com/in/vishnu-priya-mamidi-43638b22a</p>', unsafe_allow_html=True)
     st.markdown('<p class="font">Gihub profile: </p>', unsafe_allow_html=True)
     st.write("[Click Here](https://github.com/vishnu-priya-42/abcd)")
