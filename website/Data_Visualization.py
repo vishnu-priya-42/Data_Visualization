@@ -41,11 +41,10 @@ df.Power = HP
 with st.container():
     st.header('Data Frame')
     st.write(df)
-    st.write("")
 
 st.markdown("""<style>.font {font-size:25px !important;}</style>""", unsafe_allow_html=True)
 
-#plotting graph for most poplar specification combination
+#plotting graph for most poplar specification
 fig1,axes=plt.subplots(2,2,figsize=(10,7))
 plt.tight_layout(pad=4)
 
@@ -79,7 +78,7 @@ axes[1,1].set_ylabel("Count",fontsize=11)
 
 with st.container():
     st.write("---")
-    st.header('Most Popular Car Specification Combination')
+    st.header('Most Popular Car Specification')
     st.write("")
     fig1
     st.write("")
