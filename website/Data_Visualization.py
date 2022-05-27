@@ -126,7 +126,7 @@ with st.container():
     st.markdown('<p class="font">From the above pie charts we can conclude that most of the customers prefer a <b>Manual</b> car and <b>SUV</b> body type</p>', unsafe_allow_html=True)
 
 #plotting graph Fuel Tank Capacity vs Power
-fig3=plt.figure(figsize=(7,4))
+fig3=plt.figure(figsize=(10,6))
 sns.regplot(x="Fuel_Tank_Capacity", y="Power", data=df)
 plt.title("Fuel Tank Capacity vs Power",fontsize=22)
 plt.xlabel("Fuel Tank Capacity",fontsize=16)
