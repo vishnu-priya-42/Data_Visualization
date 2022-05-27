@@ -84,7 +84,7 @@ with st.container():
     fig1
     st.write("")
     st.header('Conclusion')
-    st.markdown('<p class="font">From the above graphs, we can conclude that most of the customers prefer car with <b>Incline</b> Cylindrical Configuration, <b>Petrol</b> Fuel type , 5 gears and 5 seats</p>', unsafe_allow_html=True)
+    st.markdown('<p class="font">From the above graphs we can conclude that most of the customers prefer car with <b>Incline</b> Cylindrical Configuration, <b>Petrol</b> Fuel type , 5 gears and 5 seats</p>', unsafe_allow_html=True)
 
 #Subplots of piecharts
 #plot Type vs count
@@ -123,7 +123,7 @@ with st.container():
     fig2
     st.write("")
     st.header('Conclusion')
-    st.markdown('<p class="font">From the above pie charts, we can conclude that most of the customers prefer a <b>Manual</b> car and <b>SUV</b> body type</p>', unsafe_allow_html=True)
+    st.markdown('<p class="font">From the above pie charts we can conclude that most of the customers prefer a <b>Manual</b> car and <b>SUV</b> body type</p>', unsafe_allow_html=True)
 
 #plotting graph Fuel Tank Capacity vs Power
 fig3=plt.figure(figsize=(10,7))
@@ -136,12 +136,12 @@ plt.yticks(fontsize=13)
 
 with st.container():
     st.write("---")
-    st.header('Power vs Mileage')
+    st.header('Power vs Fuel Tank Capacity')
     st.write("")
     fig3
     st.write("")
     st.header('Conclusion')
-    st.markdown('<p class="font">Hence from above graph, we can conclude that <b>more power generally means higher fuel consumption</b></p>', unsafe_allow_html=True)
+    st.markdown('<p class="font">Hence from above graph we can conclude that <b>more power generally means higher fuel consumption</b></p>', unsafe_allow_html=True)
 
 #model development
 #Simple Regression Model
@@ -159,7 +159,7 @@ y_pred_slr= slr.predict(x_test)
 y_test=y_test.ravel()
 y_pred_slr=y_pred_slr.ravel()
 
-#Line of best fit
+#plot actual and predicted values
 fig4,ax=plt.subplots()
 ax.scatter(x_test,y_test)
 ax.plot(x_test, y_pred_slr, 'red')
@@ -174,7 +174,7 @@ with st.container():
     fig4
     st.write("")
     st.header('Conclusion')
-    st.markdown('<p class="font">From above observation, we can conclude that Actual values and Predicted values are almost same and hence our Model is </p>', unsafe_allow_html=True)
+    st.markdown('<p class="font">From above observation we can conclude that Actual values and Predicted values are almost same and hence this Model is <b>accurate</b> </p>', unsafe_allow_html=True)
 
 #Multiple Regression Model
 
@@ -192,14 +192,16 @@ X=x_test[:,0]
 Y=x_test[:,1]
 Z=y_test
 
+
+#plot actual and predicted values
 fig5=plt.figure()
 ax=fig5.add_subplot(111,projection='3d')
-
 ax.scatter(X,Y,Z)
 ax.scatter(X,Y,y_pred_mlr,c='r')
 ax.set_xlabel("Power")
 ax.set_ylabel("Fuel Tank Capacity")
 ax.set_zlabel("Ex-Showroom Price")
+ax.legend(labels=["Sample data","Regression Model"])
 
 with st.container():
     st.write("---")
@@ -208,4 +210,5 @@ with st.container():
     fig5
     st.write("")
     st.header('Conclusion')
-    st.markdown('<p class="font">From above observation, we can conclude that Actual values and Predicted values are almost same and hence our Model is </p>', unsafe_allow_html=True)
+    st.markdown('<p class="font">From above observation we can conclude that Actual values and Predicted values are almost same and hence this Model is <b>accurate</b></p>', unsafe_allow_html=True)
+    
