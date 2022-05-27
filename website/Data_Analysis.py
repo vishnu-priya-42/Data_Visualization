@@ -25,8 +25,7 @@ with st.container():
         st.title("Data Analysis Report")
         st.subheader("Data Analysis on Automotive Industry")
         st.write("")
-        st.markdown("""
-        <style>.font {font-size:20px !important;}</style>""", unsafe_allow_html=True)
+        st.markdown("""<style>.font {font-size:20px !important;}</style>""", unsafe_allow_html=True)
         st.markdown('<p class="font">This Website summarises the Challenge of Data Analysis on a sample dataset of Automotive Industry</p>', unsafe_allow_html=True)
 
 #displaying summary of website
