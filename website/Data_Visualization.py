@@ -163,8 +163,8 @@ y_pred_slr=y_pred_slr.ravel()
 fig4,ax=plt.subplots(figsize=(10,6))
 ax.scatter(x_test,y_test)
 ax.plot(x_test, y_pred_slr, 'red')
-ax.set_xlabel("Power")
-ax.set_ylabel("Ex-Showroom Price")
+ax.set_xlabel("Power",fontsize=16)
+ax.set_ylabel("Ex-Showroom Price",fontsize=16)
 ax.legend(labels=["Sample data","Regression Model"])
 
 with st.container():
@@ -196,9 +196,9 @@ fig5=plt.figure(figsize=(10,6))
 ax=fig5.add_subplot(111,projection='3d')
 ax.scatter(X,Y,Z)
 ax.scatter(X,Y,y_pred_mlr,c='r')
-ax.set_xlabel("Power")
-ax.set_ylabel("Fuel Tank Capacity")
-ax.set_zlabel("Ex-Showroom Price")
+ax.set_xlabel("Power",fontsize=16)
+ax.set_ylabel("Fuel Tank Capacity",fontsize=16)
+ax.set_zlabel("Ex-Showroom Price",fontsize=16)
 ax.legend(labels=["Sample data","Regression Model"])
 
 with st.container():
