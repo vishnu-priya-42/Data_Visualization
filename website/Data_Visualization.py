@@ -196,9 +196,9 @@ fig5=plt.figure(figsize=(10,6))
 ax=fig5.add_subplot(111,projection='3d')
 ax.scatter(X,Y,Z)
 ax.scatter(X,Y,y_pred_mlr,c='r')
-ax.set_xlabel("Power",fontsize=16)
-ax.set_ylabel("Fuel Tank Capacity",fontsize=16)
-ax.set_zlabel("Ex-Showroom Price",fontsize=16)
+ax.set_xlabel("Power",fontsize=12)
+ax.set_ylabel("Fuel Tank Capacity",fontsize=12)
+ax.set_zlabel("Ex-Showroom Price",fontsize=12)
 ax.legend(labels=["Sample data","Regression Model"])
 
 with st.container():
