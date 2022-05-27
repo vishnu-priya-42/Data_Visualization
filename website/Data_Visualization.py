@@ -94,7 +94,7 @@ type_dict=dict((type_count, type_list.count(type_count)) for type_count in set(t
 dict_keys=list(type_dict.keys())
 dict_values=list(type_dict.values())
 
-fig2,axes=plt.subplots(1,2,figsize=(20,12))
+fig2,axes=plt.subplots(1,2,figsize=(15,11))
 plt.tight_layout(pad=4)
 
 sns.set_style('darkgrid')
@@ -126,7 +126,7 @@ with st.container():
     st.markdown('<p class="font">From the above pie charts we can conclude that most of the customers prefer a <b>Manual</b> car and <b>SUV</b> body type</p>', unsafe_allow_html=True)
 
 #plotting graph Fuel Tank Capacity vs Power
-fig3=plt.figure(figsize=(10,7))
+fig3=plt.figure(figsize=(15,11))
 sns.regplot(x="Fuel_Tank_Capacity", y="Power", data=df)
 plt.title("Fuel Tank Capacity vs Power",fontsize=22)
 plt.xlabel("Fuel Tank Capacity",fontsize=16)
@@ -160,7 +160,7 @@ y_test=y_test.ravel()
 y_pred_slr=y_pred_slr.ravel()
 
 #plot actual and predicted values
-fig4,ax=plt.subplots()
+fig4,ax=plt.subplots(figsize=(15,11))
 ax.scatter(x_test,y_test)
 ax.plot(x_test, y_pred_slr, 'red')
 ax.set_xlabel("Power")
@@ -194,7 +194,7 @@ Z=y_test
 
 
 #plot actual and predicted values
-fig5=plt.figure()
+fig5=plt.figure(figsize=(15,11))
 ax=fig5.add_subplot(111,projection='3d')
 ax.scatter(X,Y,Z)
 ax.scatter(X,Y,y_pred_mlr,c='r')
