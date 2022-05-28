@@ -88,9 +88,9 @@ with st.container():
     fig1
     st.write("")
     st.header('Conclusion')
-    st.markdown('<p class="font">From the above graphs we can conclude that most of the customers prefer car with <b>Incline</b> Cylindrical Configuration, <b>Petrol</b> Fuel type , 5 gears and 5 seats</p>', unsafe_allow_html=True)
+    st.markdown('<p class="font">From the above graphs we can conclude that most of the customers prefer car with <b>In-line</b> Cylindrical Configuration, <b>Petrol</b> Fuel type , 5 gears and 5 seats</p>', unsafe_allow_html=True)
 
-#Subplots of piecharts
+    #Subplots of piecharts
 fig2,axes=plt.subplots(1,2,figsize=(15,11))
 plt.tight_layout(pad=4)
 
@@ -130,6 +130,12 @@ with st.container():
     st.header('Conclusion')
     st.markdown('<p class="font">From the above pie charts we can conclude that most of the customers prefer a <b>Manual</b> car and <b>SUV</b> body type</p>', unsafe_allow_html=True)
 
+with st.container():
+    st.write("---")
+    st.markdown('<p class="font">Customers data such as prior product responses, customer feedback forms, competitor product successes, and so on, is collected through a variety of channels, including physical retail, e-commerce, and social media</p>', unsafe_allow_html=True)
+    st.markdown('<p class="font">Businesses and manufacturing industries can gain insights into customer behaviour by using data analysis tools such as prediction analysis, regression analysis, and budgeting to create comprehensive customer profiles from this data, allowing them to provide a more personalised experience and become more successful and popular</p>', unsafe_allow_html=True)
+    st.markdown('<p class="font">In the case of the current dataset under analysis, a <b>Manual Car</b> with <b>In-line Cylindrical Configuration</b>, <b>5 seats</b> with an <b>SUV Body Type</b> is the demand of the market.</p>', unsafe_allow_html=True)
+    
 #plotting graph Fuel Tank Capacity vs Power
 fig3=plt.figure(figsize=(10,6))
 sns.regplot(x="Fuel_Tank_Capacity", y="Power", data=df)
@@ -147,10 +153,10 @@ with st.container():
     fig3
     st.write("")
     st.header('Conclusion')
-    st.markdown('<p class="font">Hence from above graph we can conclude that <b>more power generally means higher fuel consumption</b></p>', unsafe_allow_html=True)
+    st.markdown('<p class="font">The above graph helps manufacturer to set up appropriate correlation between power of vehicle and its fuel tank</p>', unsafe_allow_html=True)
+    st.markdown('<p class="font">It also helps manufacturer to estimate raw material usage, full tank size, costing, maintaining at a cost that makes the vehicle sellable, calls for improvement of automotive technology such that higher power can be reached with less amount of fuel expenditure for the customer.</p>', unsafe_allow_html=True)
 
 #model development
-
 #Simple Regression Model
 x=np.array(df["Power"]).reshape(-1,1)
 y=np.array(df["Ex-Showroom_Price"]).reshape(-1,1)
