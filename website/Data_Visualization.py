@@ -181,9 +181,9 @@ with st.container():
     st.write("")
     fig4
     st.write("")
-    st.header('Conclusion')
     st.markdown('<p class="font">The accuracy of model is:</p>', unsafe_allow_html=True)
     st.write(accuracy_slr)
+    st.header('Conclusion')
     st.markdown('<p class="font">From above observation we can conclude that this Model is <b>accurate</b> </p>', unsafe_allow_html=True)
 
 #Multiple Regression Model
@@ -219,8 +219,8 @@ with st.container():
     st.write("")
     fig5
     st.write("")
-    st.header('Conclusion')
     st.markdown('<p class="font">The accuracy of model is:</p>', unsafe_allow_html=True)
     st.write(accuracy_mlr)
+    st.header('Conclusion')
     st.markdown('<p class="font">From above observation we can conclude that this Model is <b>accurate</b></p>', unsafe_allow_html=True)   
     
