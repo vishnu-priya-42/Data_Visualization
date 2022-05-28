@@ -62,5 +62,5 @@ with st.container() :
     st.markdown('<p class="font">College: Maturi Venkata Subba Rao Enginneering College</p>', unsafe_allow_html=True)
     st.markdown('<p class="font">LinkedIn profile: </p>', unsafe_allow_html=True)
     st.write("[Click Here](https://www.linkedin.com/in/vishnu-priya-mamidi-43638b22a)")
-    st.markdown('<p class="font">Gihub profile: </p>', unsafe_allow_html=True)
+    st.markdown('<p class="font">Github profile: </p>', unsafe_allow_html=True)
     st.write("[Click Here](https://github.com/vishnu-priya-42/abcd)")
