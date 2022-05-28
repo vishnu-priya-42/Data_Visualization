@@ -6,8 +6,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 import streamlit as st
 
+#setting the name and icon of web app 
 st.set_page_config(page_title="Data Visualization",page_icon=":chart_with_downwards_trend:",layout="wide")
 
+#setting title in web app
 st.title('Data Analysis of Automotive Industry')
 
 # reading .csv file
@@ -38,10 +40,12 @@ HP = df.Power.str.extract(r'(\d{1,4}).*').astype(int) * 0.98632
 HP = HP.apply(lambda x: round(x,2))
 df.Power = HP
 
+#displaying dataframe on web app
 with st.container():
     st.header('Data Frame')
     st.write(df)
 
+#setting font size to write on web app
 st.markdown("""<style>.font {font-size:25px !important;}</style>""", unsafe_allow_html=True)
 
 #plotting graph for most poplar specification
@@ -76,6 +80,7 @@ axes[1,1].set_title("Preferable Seating Capacity",fontsize=15)
 axes[1,1].set_xlabel("Number of Seats",fontsize=11)
 axes[1,1].set_ylabel("Count",fontsize=11)
 
+#displaying most popular car specification on web app
 with st.container():
     st.write("---")
     st.header('Most Popular Car Specification')
@@ -86,15 +91,15 @@ with st.container():
     st.markdown('<p class="font">From the above graphs we can conclude that most of the customers prefer car with <b>Incline</b> Cylindrical Configuration, <b>Petrol</b> Fuel type , 5 gears and 5 seats</p>', unsafe_allow_html=True)
 
 #Subplots of piecharts
+fig2,axes=plt.subplots(1,2,figsize=(15,11))
+plt.tight_layout(pad=4)
+
 #plot Type vs count
 type_list=df["Type"].tolist()
 type_dict=dict((type_count, type_list.count(type_count)) for type_count in set(type_list))
 
 dict_keys=list(type_dict.keys())
 dict_values=list(type_dict.values())
-
-fig2,axes=plt.subplots(1,2,figsize=(15,11))
-plt.tight_layout(pad=4)
 
 sns.set_style('darkgrid')
 color=sns.color_palette("Paired")
@@ -115,6 +120,7 @@ axes[1].set_title("Most Popular Body Type",fontsize=30)
 axes[1].pie(b_dict_values,colors=color, startangle=30)
 axes[1].legend(b_dict_keys)
 
+#displaying most popular car type and body type on web app
 with st.container():
     st.write("---")
     st.header('Most Popular Car Type')
@@ -133,6 +139,7 @@ plt.ylabel("Power",fontsize=16)
 plt.xticks(fontsize=13)
 plt.yticks(fontsize=13)
 
+#displaying power vs fuel capacity on web app
 with st.container():
     st.write("---")
     st.header('Power vs Fuel Tank Capacity')
@@ -143,8 +150,8 @@ with st.container():
     st.markdown('<p class="font">Hence from above graph we can conclude that <b>more power generally means higher fuel consumption</b></p>', unsafe_allow_html=True)
 
 #model development
-#Simple Regression Model
 
+#Simple Regression Model
 x=np.array(df["Power"]).reshape(-1,1)
 y=np.array(df["Ex-Showroom_Price"]).reshape(-1,1)
 
@@ -153,6 +160,7 @@ x_train, x_test ,y_train, y_test = train_test_split(x, y, test_size = 0.3, rando
 slr = LinearRegression()  
 slr.fit(x_train, y_train)
 
+accuracy_slr=slr.score(x_test,y_test)
 y_pred_slr= slr.predict(x_test)
 
 y_test=y_test.ravel()
@@ -166,6 +174,7 @@ ax.set_xlabel("Power",fontsize=16)
 ax.set_ylabel("Ex-Showroom Price",fontsize=16)
 ax.legend(labels=["Sample data","Regression Model"])
 
+#displaying simple reg model on web app
 with st.container():
     st.write("---")
     st.header('Simple Linear Regression Model')
@@ -173,10 +182,11 @@ with st.container():
     fig4
     st.write("")
     st.header('Conclusion')
-    st.markdown('<p class="font">From above observation we can conclude that Actual values and Predicted values are almost same and hence this Model is <b>accurate</b> </p>', unsafe_allow_html=True)
+    st.markdown('<p class="font">The accuracy of model is:</p>', unsafe_allow_html=True)
+    st.write(accuracy_slr)
+    st.markdown('<p class="font">From above observation we can conclude that this Model is <b>accurate</b> </p>', unsafe_allow_html=True)
 
 #Multiple Regression Model
-
 x=df[["Power","Fuel_Tank_Capacity"]].values.reshape(-1,2)
 y=df["Ex-Showroom_Price"]
 
@@ -184,6 +194,8 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.3, rando
 
 mlr = LinearRegression()  
 mlr.fit(x_train, y_train)
+
+accuracy_mlr=mlr.score(x_test,y_test)
 y_pred_mlr= mlr.predict(x_test)
 
 X=x_test[:,0]
@@ -200,6 +212,7 @@ ax.set_ylabel("Fuel Tank Capacity",fontsize=11)
 ax.set_zlabel("Ex-Showroom Price",fontsize=11)
 ax.legend(labels=["Sample data","Regression Model"])
 
+#displaying multiple reg model on web app
 with st.container():
     st.write("---")
     st.header('Multiple Linear Regression Model')
@@ -207,5 +220,7 @@ with st.container():
     fig5
     st.write("")
     st.header('Conclusion')
-    st.markdown('<p class="font">From above observation we can conclude that Actual values and Predicted values are almost same and hence this Model is <b>accurate</b></p>', unsafe_allow_html=True)
+    st.markdown('<p class="font">The accuracy of model is:</p>', unsafe_allow_html=True)
+    st.write(accuracy_mlr)
+    st.markdown('<p class="font">From above observation we can conclude that this Model is <b>accurate</b></p>', unsafe_allow_html=True)   
     
